@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Item</title>
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+</head>
+<body>
+<header>
+    <h1>Create Item</h1>
+</header>
+<aside>
+    <a href="/items">Back to List</a>
+    <br><br>
+    <a href="/">Back to Home</a>
+</aside>
+<main>
+    <form th:action="@{/items/create}" th:object="${item}" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" th:field="*{name}">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" th:field="*{description}">
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" th:field="*{price}">
+        </div>
+        <div>
+            <button type="submit">Create</button>
+        </div>
+    </form>
+</main>
+<footer>
+    © 2024 Item Manager
+</footer>
+</body>
+</html>
